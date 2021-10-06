@@ -20,7 +20,7 @@
 <li>Two push-buttons;</li>
 <li>A bunch of jumpers.</li>
 </ul>
-The code was write in C.
+The code was written in C.
 </p>
 
 # Video
