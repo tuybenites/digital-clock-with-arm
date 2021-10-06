@@ -1,4 +1,4 @@
-<h1>DIGITAL CLOCK WITH NUCLEO-446RE ARM<</h1>
+<h1>DIGITAL CLOCK WITH NUCLEO-446RE ARM</h1>
 
 <p>Digital clock using seven segments displays and a microcontroller</p>
 
