@@ -3,7 +3,8 @@
 <p>Digital clock using seven segments displays and a microcontroller</p>
 
 <p><a href="#about">About</a> •
-<a href="#about">Technologies</a></p>
+<a href="#about">Technologies</a> • 
+<a href="#video">Video</a> </p>
 
 
 # About
@@ -21,3 +22,8 @@
 </ul>
 The code was write in C.
 </p>
+
+# Video
+<p>A little video of the system working
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WR9fDmU7nZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
