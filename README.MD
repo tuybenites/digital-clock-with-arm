@@ -24,6 +24,6 @@ The code was write in C.
 </p>
 
 # Video
-<a href="https://youtu.be/WR9fDmU7nZ0" target="_blank">
-<p>A little video of the system working (external link for Youtube)</p>
+<a href="https://youtu.be/WR9fDmU7nZ0" target="_blank" rel="external">
+A little video of the system working (external link for Youtube)
 </a>
