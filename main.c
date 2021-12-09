@@ -10,56 +10,56 @@ void TIM1_TRG_COM_TIM11_IRQHandler(void);
 void TIM1_UP_TIM10_IRQHandler(void);
 
 int main(void){
-RCC->AHB1ENR = 0x87;
-GPIOA->MODER = 0x28000000;
-GPIOA->PUPDR = 0x0A;
-GPIOC->MODER = 0x1555;
-GPIOB->MODER = 0x555;
+	RCC->AHB1ENR = 0x87;
+	GPIOA->MODER = 0x28000000;
+	GPIOA->PUPDR = 0x0A;
+	GPIOC->MODER = 0x1555;
+	GPIOB->MODER = 0x555;
 
-setTim10();
-setTim11();
+	setTim10();
+	setTim11();
 
-int flagb0=0;
-int flagb1=0;
-int b0 = 0;
-int b1 = 0;
+	int flagb0=0;
+	int flagb1=0;
+	int b0 = 0;
+	int b1 = 0;
 
-while(1){
+	while(1){
 
-	  if((GPIOA->IDR & 0x01) != 0 && flagb0==0){
-		  min++;
-		  if(min > 59) min = 0;
-		  flagb0=1;
+		  if((GPIOA->IDR & 0x01) != 0 && flagb0==0){
+			  min++;
+			  if(min > 59) min = 0;
+			  flagb0=1;
 
-	  }
+		  }
 
-	  if(flagb0){
-		  if(++b0 > 40000){
-			  if(!(GPIOA->IDR & 0x01)){
-				  flagb0=0;
-				  b0=0;
+		  if(flagb0){
+			  if(++b0 > 40000){
+				  if(!(GPIOA->IDR & 0x01)){
+					  flagb0=0;
+					  b0=0;
 
+				  }
 			  }
 		  }
-	  }
 
-	  if((GPIOA->IDR & 0x02) != 0 && flagb1==0){
-	  		  hora++;
-	  		  if(hora > 23) hora = 0;
-	  		  flagb1=1;
+		  if((GPIOA->IDR & 0x02) != 0 && flagb1==0){
+				  hora++;
+				  if(hora > 23) hora = 0;
+				  flagb1=1;
 
-	  	  }
+			  }
 
-	  	  if(flagb1){
-	  		  if(++b1 > 40000){
-	  			  if(!(GPIOA->IDR & 0x02)){
-	  				  flagb1=0;
-	  				  b1 = 0;
-	  			  }
-	  		  }
-	  	  }
+			  if(flagb1){
+				  if(++b1 > 40000){
+					  if(!(GPIOA->IDR & 0x02)){
+						  flagb1=0;
+						  b1 = 0;
+					  }
+				  }
+			  }
 
-}
+	}
 }
 
 void setTim10(void){ // 1 segundo
@@ -74,7 +74,7 @@ void setTim10(void){ // 1 segundo
 
 }
 
-void setTim11(void){ //timer de multiplexação
+void setTim11(void){ //timer de multiplexaÃ§Ã£o
 	RCC->APB2ENR |= 0x60000;
 	TIM11->CR1 |= 0x85;
 	TIM11->ARR = 127;
@@ -93,7 +93,7 @@ void TIM1_TRG_COM_TIM11_IRQHandler(void){
 		break;
 		case 1:
 			GPIOB->ODR = 0x3D;
-			GPIOC->ODR = arr[seg/10]; //segundo digito (vai mover uma casa decimal e concatenar, pois é inteiro)
+			GPIOC->ODR = arr[seg/10]; //segundo digito (vai mover uma casa decimal e concatenar, pois Ã© inteiro)
 		break;
 		case 2:
 			GPIOB->ODR = 0x3B;
